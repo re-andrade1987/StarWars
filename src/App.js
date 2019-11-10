@@ -1,7 +1,6 @@
 import React from 'react';
+import PersonStarWars from './Componentes/Lista/PersonStarWars';
 
-
-import PersonStarWars from './Componentes/PersonStarWars';
 function App() {
   return (
     <div className="App">

@@ -11,7 +11,9 @@
     color: white;
     font-family: 'Oswald', sans-serif;
 }
-
+@media (max-width: 480px) {
+   
+}
 
 
 
