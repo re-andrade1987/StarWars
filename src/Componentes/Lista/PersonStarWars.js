@@ -23,7 +23,9 @@ export default class StarWars extends React.Component {
     componentDidMount() {
         const responsePeople = this.getData('people');
         responsePeople.then(people => {
+            console.log(people)
             this.setState({ people, filteredPeople: people })
+
 
         })
 
@@ -92,7 +94,6 @@ export default class StarWars extends React.Component {
                                 <div key={index}>
                                     <p>{p.name}</p>
                                     <p>Year of birth: {p.birth_year}</p>
-                                    <p>Films: {p.films.title}</p>
                                 </div>
                             )
                         })
