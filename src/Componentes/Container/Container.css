@@ -1,0 +1,31 @@
+.main-container{
+    background-color: #000;
+    color:#F2CB06;
+    overflow: hidden;
+    border: 1px solid #0000CD ;
+    text-align: center;
+    font-family:'Helvetica-neue', 'Helvetica', sans-serif;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.container h3{
+    font-size: 30px;
+    text-shadow: 0.2em 0.5em 0.1em #600,-0.3em 0.1em 0.1em #060,0.4em -0.3em 0.1em #006
+}
+.shadow{
+    height: 100px;
+    position: relative;
+    color:rgb(66, 66, 184);
+    border: 2px solid #0000CD ;
+}
+.shadow p{
+    margin-top: 40px;
+}
+@media (max-width: 480px) {
+    .container h3{
+      font-size: 20px;
+    }
+  }

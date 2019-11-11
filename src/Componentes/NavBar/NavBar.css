@@ -1,0 +1,22 @@
+
+Nav{
+    border: 2px solid #0000CD ;
+    background-color: #000;
+    height: 140px;
+    text-align: center;
+    color:#F2CB06;
+    font-family:'Helvetica-neue', 'Helvetica', sans-serif;
+}
+Nav img{
+    margin-top: 10px;
+    width: 200px;
+    text-align: center;
+}
+@media (max-width: 480px) {
+    Nav{
+    height: 100px;
+    }
+    Nav img{
+        width: 130px;
+    }      
+}
