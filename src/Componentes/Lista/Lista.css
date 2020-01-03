@@ -12,7 +12,9 @@
   color:#F2CB06;
   font-family:'Helvetica-neue', 'Helvetica', sans-serif;
 }
-
+h2{
+  color: white;
+}
 form{
   margin-top: 20px;
 }

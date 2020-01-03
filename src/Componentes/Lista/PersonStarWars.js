@@ -6,110 +6,64 @@ export default class StarWars extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            people: [],
-            filteredPeople: [],
-            films: [],
-            filteredFilms: [],
-            selected: ''
+            planets: [],
+           
+           
         }
         this.getData = this.getData.bind(this)
     }
 
-    getData(param) {
-        return axios.get(`https://swapi.co/api/${param}`)
+    getData() {
+        return axios.get("https://swapi.co/api/planets")
             .then(response => response.data.results)
     }
 
     componentDidMount() {
-        const responsePeople = this.getData('people');
-        responsePeople.then(people => {
-            console.log(people)
-            this.setState({ people, filteredPeople: people })
-
-
-        })
-
-        const responseFilms = this.getData('films');
-        responseFilms.then(films => {
-            this.setState({ films, filteredFilms: films })
-
+        const responseInfoPlanets = this.getData('planets');
+        responseInfoPlanets.then(planets => {
+            console.log(planets)
+            this.setState({ planets })
         })
     }
 
     handleChange = event => {
-        const { selected } = this.state;
-        const inputValue = event.target.value.toLowerCase();
-        if (selected === 'people') {
-            let originalList = this.state.people;
-            let filteredList = [];
-            originalList.filter(person => {
-                if (person.name.toLowerCase().includes(inputValue)) {
-                    filteredList.push(person);
-                    this.setState({ filteredPeople: filteredList });
-                }
-            });
-        } else {
-            let originalList = this.state.films;
-            let filteredList = [];
-            originalList.filter(film => {
-                if (film.title.toLowerCase().includes(inputValue)) {
-                    filteredList.push(film);
-                    this.setState({ filteredFilms: filteredList });
-                }
-            });
-        }
+      
     }
 
     handleSubmit = event => {
         this.setState({
-            selected: event.target.value,
-            filteredFilms: this.state.films,
-            filteredPeople: this.state.people
+           
         })
     }
 
     render() {
-        const people = this.state.filteredPeople
-        const films = this.state.filteredFilms
-        const selected = this.state.selected
+    
         return (
-
+        
             <div className="main">
-                <div className="form">
-                    <form>
-                        <label>
-                            <input type="text" className="userInput" placeholder="Search here movie or character.." name="name" onChange={this.handleChange} />
-                        </label>
-
-                        <select value={this.state.value} onChange={this.handleSubmit}>
-                            <option defaultValue value="films">Films</option>
-                            <option value="people">Character</option>
-                        </select>
-                    </form>
-                </div>
-                {
-                    selected === 'people' ? (
-                        people.length > 0 && people.map((p, index) => {
-                            return (
-                                <div key={index}>
-                                    <p>{p.name}</p>
-                                    <p>Year of birth: {p.birth_year}</p>
-                                </div>
-                            )
-                        })
-                    ) : (
-
-                            films.length > 0 && films.map((f, index) => {
-                                return (
-                                    <div key={index}>
-                                        <p>{f.title}</p>
-                                        <p> Episode {f.episode_id}</p>
-                                        <p>{f.opening_crawl}</p>
-                                    </div>
-                                )
-                            })
-                        )
-                }
+                { this.state.planets.map((item) => {
+                    return(
+                    <div  key={item.id} className='info'>
+                        <div>
+                            <h2>Planet name </h2>
+                            <strong>{item.name}</strong>
+                        </div>
+                        <div>
+                            <h2>climate</h2>
+                            <strong>{item.climate}</strong>
+                        </div>
+                        <div>
+                            <h2>Population of number </h2>
+                            <strong>{item.population}</strong>
+                        </div>
+                        <div>
+                            <h2>Terrain </h2>
+                            <strong>{item.terrain}</strong>
+                        </div>
+                    </div>
+                    )
+                   
+                })}
             </div>
         );
     }
