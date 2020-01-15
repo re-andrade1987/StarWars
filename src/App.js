@@ -1,5 +1,5 @@
 import React from 'react';
-import PersonStarWars from './Componentes/Lista/PersonStarWars';
+import ListaPlanets from './Componentes/ListaPlanets/listaplanets';
 import NavBar from './Componentes/NavBar/NavBar'
 import Container from './Componentes/Container/Container'
 
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Container/>
-      <PersonStarWars/>
+      <ListaPlanets/>
     </div>
   );
 }

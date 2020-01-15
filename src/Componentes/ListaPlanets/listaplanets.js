@@ -8,7 +8,6 @@ export default class StarWars extends React.Component {
         this.state = {
             planets: [],
            
-           
         }
         this.getData = this.getData.bind(this)
     }
@@ -37,34 +36,25 @@ export default class StarWars extends React.Component {
     }
 
     render() {
-    
         return (
-        
-            <div className="main">
+            <div  className="main">
                 { this.state.planets.map((item) => {
                     return(
-                    <div  key={item.id} className='info'>
-                        <div>
-                            <h2>Planet name </h2>
-                            <strong>{item.name}</strong>
-                        </div>
-                        <div>
-                            <h2>climate</h2>
-                            <strong>{item.climate}</strong>
-                        </div>
-                        <div>
-                            <h2>Population of number </h2>
-                            <strong>{item.population}</strong>
-                        </div>
-                        <div>
-                            <h2>Terrain </h2>
-                            <strong>{item.terrain}</strong>
-                        </div>
+                    <div className='info'>
+                        <ul key={item.id}>
+                            <div className='first-li'>
+                                <li>Name: {item.name}</li>
+                            </div>
+                            <li>Population: {item.population}</li>
+                            <li>Climate: {item.climate}</li>
+                            <li>Terrain: {item.terrain}</li>
+                            <button>Next</button>
+                        </ul>
                     </div>
                     )
-                   
                 })}
             </div>
+
         );
     }
 }
