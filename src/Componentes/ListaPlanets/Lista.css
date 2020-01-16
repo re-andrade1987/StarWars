@@ -3,7 +3,6 @@
   .main {
   border: 2px solid #0000CD ;
   background-color: #000;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,20 +14,18 @@
 .info{
   border: 2px solid #0000CD ;
   margin-top: 10px;
-  width: 70%;
+  width: 50%;
 }
 .first-li li{
-  border: 2px solid #0000CD ;
-  width: 531px;
+  border-bottom: 2px solid #0000CD ;
+}
+ul{
   margin-left: -40px;
-  font-size: 30px;
-  height: 70px;
-  margin-top: -25px;
-  padding-top: 30px;
 }
 ul li {
   list-style: none;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 button{
   background-color: #0000CD;
@@ -38,24 +35,23 @@ button{
   margin-top: 15px;
   color:#ffff;
   font-size: 15px;
-
 }
  
-
 @media (max-width: 480px) {
   .main{
     font-size: 20px;
   }
-  .info{
-    border: 2px solid #0000CD ;
-    margin-top: 10px;
-    width: 100%;
-  }
-  .first-li li{
-    max-width: 100%;
-    margin-left: 0;
-  }
  
+  .info{
+    margin-top: 10px;
+    width: 80%;
+
+  }
+}
+@media (max-width: 800px){
+  ul{
+    margin-left: -40px;
+  }
 }
 
 

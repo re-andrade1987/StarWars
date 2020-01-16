@@ -13,8 +13,11 @@ export default class StarWars extends React.Component {
     }
 
     getData() {
-        return axios.get("https://swapi.co/api/planets")
-            .then(response => response.data.results)
+        const randomNumber = Math.floor((Math.random() * 88 + 1))
+        let apiUrl = "https://swapi.co/api/planets" + randomNumber
+
+        axios.get(apiUrl)
+        .then(response => response.data.results)
     }
 
     componentDidMount() {
@@ -25,34 +28,25 @@ export default class StarWars extends React.Component {
         })
     }
 
-    handleChange = event => {
-      
+    handleClick(){
+       console.log('Fui clicado')
+       this.getData()
     }
-
-    handleSubmit = event => {
-        this.setState({
-           
-        })
-    }
-
     render() {
         return (
             <div  className="main">
-                { this.state.planets.map((item) => {
-                    return(
-                    <div className='info'>
-                        <ul key={item.id}>
-                            <div className='first-li'>
-                                <li>Name: {item.name}</li>
-                            </div>
-                            <li>Population: {item.population}</li>
-                            <li>Climate: {item.climate}</li>
-                            <li>Terrain: {item.terrain}</li>
-                            <button>Next</button>
-                        </ul>
-                    </div>
-                    )
-                })}
+                <div className='info'>
+                    <ul>
+                        <div className='first-li'>
+                            <li>Name: {this.state.name}</li>
+                        </div>
+                        <li>Population: {this.state.population}</li>
+                        <li>Climate: {this.state.climate}</li>
+                        <li>Terrain: {this.state.population}</li>
+                        <p>Featured in films</p>
+                        <button onClick={this.handleClick}>Next</button>
+                    </ul>
+                </div>
             </div>
 
         );
