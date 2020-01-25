@@ -4,10 +4,7 @@
     border: 1px solid #0000CD ;
     text-align: center;
 }
-.container{
-    max-width: 1000px;
-    position: relative;
-}
+
 .container h3{
     margin: 20px;
     font-size: 30px;
