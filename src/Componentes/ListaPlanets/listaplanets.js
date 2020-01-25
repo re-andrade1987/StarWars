@@ -7,13 +7,12 @@ export default class StarWars extends React.Component {
         super(props)
         this.state = {
             planet: {
-                name: '', 
-                population: '', 
+                name: '',
+                population: '',
                 climate: '',
                 terrain: '',
                 gravity: '',
                 diameter: '',
-                films: [],
             }
         }
         this.getData = this.getData.bind(this)
@@ -25,9 +24,6 @@ export default class StarWars extends React.Component {
             this.setState({
                 planet: planet.data,
             })
-            if( planet === "" ){
-                this.setState({loanding: 'Carregando...'})
-            }
         })
     }
 
@@ -41,7 +37,7 @@ export default class StarWars extends React.Component {
                 <div className='info'>
                     <ul>
                         <div className='first-li'>
-                            <li>Name: {this.state.planet.name}</li>
+                            <li>Planet: {this.state.planet.name}</li>
                         </div>
                         <li>Population: {this.state.planet.population}</li>
                         <li>Climate: {this.state.planet.climate}</li>

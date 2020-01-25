@@ -8,10 +8,10 @@ function Container(props) {
                 <div className="shadow">
                     <p>A long time ago, in a galaxy far,far away...</p>
                 </div>
-                    <h3>May the force be with you</h3>
+                <h3>May the force be with you</h3>
             </div>
         </div>
-        
+
     )
 }
 

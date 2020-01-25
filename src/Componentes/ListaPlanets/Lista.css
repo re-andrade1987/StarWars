@@ -33,6 +33,7 @@ button{
   color:#ffff;
   font-size: 15px;
   margin-bottom: 30px;
+  cursor: pointer;
 }
  
 @media (max-width: 480px) {
