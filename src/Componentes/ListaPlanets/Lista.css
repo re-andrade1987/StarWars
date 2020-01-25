@@ -2,7 +2,6 @@
  
   .main {
   border: 2px solid #0000CD ;
-  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,15 +12,13 @@
 .info{
   border: 2px solid #0000CD ;
   margin-top: 10px;
-  width: 50%;
+  width: 60%;
   margin-bottom: 50px;
 }
 .first-li li{
   border-bottom: 2px solid #0000CD ;
 }
-ul{
-  margin-left: -40px;
-}
+
 ul li {
   list-style: none;
   margin-top: 10px;
@@ -30,29 +27,26 @@ ul li {
 button{
   background-color: #0000CD;
   border-radius: 5px;
-  width: 100px;
+  width: 150px;
   height: 40px;
   margin-top: 15px;
   color:#ffff;
   font-size: 15px;
+  margin-bottom: 30px;
 }
  
 @media (max-width: 480px) {
   .main{
     font-size: 20px;
   }
- 
   .info{
     margin-top: 10px;
     width: 80%;
 
   }
 }
-@media (max-width: 800px){
-  ul{
-    margin-left: -40px;
-  }
-}
+
+
 
 
 

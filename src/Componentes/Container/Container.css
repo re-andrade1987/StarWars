@@ -6,10 +6,10 @@
 }
 .container{
     max-width: 1000px;
-    margin: 0 auto;
     position: relative;
 }
 .container h3{
+    margin: 20px;
     font-size: 30px;
     text-shadow: 0.2em 0.5em 0.1em #600,-0.3em 0.1em 0.1em #060,0.4em -0.3em 0.1em #006
 }
@@ -22,6 +22,7 @@
 .shadow p{
     margin-top: 40px;
 }
+
 @media (max-width: 480px) {
     .container h3{
       font-size: 20px;
