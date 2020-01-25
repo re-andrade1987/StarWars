@@ -2,7 +2,7 @@ Star wars challenge
 
 This project was bootstrapped with Create React App.
 
-Was created to view star wars characters and movies you can see this project in this link https://starwars-trinks.netlify.com/
+Was created to view star wars characters and movies you can see this project in this link https://starwarsteste.netlify.com/
 
 ## Available Scripts
 
