@@ -1,7 +1,6 @@
 import React from 'react';
 import planets from '../../services/planets'
 import './Lista.css';
-import FadeIn from 'react-fade-in'
 
 
 export default class StarWars extends React.Component {
@@ -45,7 +44,6 @@ export default class StarWars extends React.Component {
         const { fetched } = this.state;
 
         return (
-            <FadeIn>
                 <div className="main">
                     {
                         fetched ?
@@ -68,7 +66,6 @@ export default class StarWars extends React.Component {
                             )
                     }
                 </div>
-            </FadeIn>
         );
     }
 }
