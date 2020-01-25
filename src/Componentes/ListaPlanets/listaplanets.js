@@ -55,8 +55,8 @@ export default class StarWars extends React.Component {
                                     <li>Terrain: {this.state.planet.terrain}</li>
                                     <li>Gravity: {this.state.planet.gravity}</li>
                                     <li>Diameter: {this.state.planet.diameter}</li>
-                                    <button onClick={this.getData}>Next</button>
                                 </ul>
+                                <button onClick={this.getData}>Next</button>
                             </div>
                             :
                             (
