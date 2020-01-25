@@ -15,6 +15,8 @@ export default class StarWars extends React.Component {
                 terrain: '',
                 gravity: '',
                 diameter: '',
+                fetched: false,
+
             }
         }
         this.getData = this.getData.bind(this)
@@ -22,35 +24,49 @@ export default class StarWars extends React.Component {
 
 
     getData() {
+        this.setState({
+            loading: false
+        });
         let getInfoPlanet = Math.floor((Math.random() * 56 + 1))
         planets.getPlanet(getInfoPlanet).then(planet => {
             this.setState({
                 planet: planet.data,
+                fetched: true
             })
         })
     }
 
     componentDidMount() {
         this.getData()
+
     }
 
     render() {
+        const { fetched } = this.state;
+
         return (
             <FadeIn>
                 <div className="main">
-                    <div className='info'>
-                        <ul>
-                            <div className='first-li'>
-                                <li>Planet: {this.state.planet.name}</li>
+                    {
+                        fetched ?
+                            <div className='info'>
+                                <ul>
+                                    <div className='first-li'>
+                                        <li>Planet: {this.state.planet.name}</li>
+                                    </div>
+                                    <li>Population: {this.state.planet.population}</li>
+                                    <li>Climate: {this.state.planet.climate}</li>
+                                    <li>Terrain: {this.state.planet.terrain}</li>
+                                    <li>Gravity: {this.state.planet.gravity}</li>
+                                    <li>Diameter: {this.state.planet.diameter}</li>
+                                    <button onClick={this.getData}>Next</button>
+                                </ul>
                             </div>
-                            <li>Population: {this.state.planet.population}</li>
-                            <li>Climate: {this.state.planet.climate}</li>
-                            <li>Terrain: {this.state.planet.terrain}</li>
-                            <li>Gravity: {this.state.planet.gravity}</li>
-                            <li>Diameter: {this.state.planet.diameter}</li>
-                            <button type='button' onClick={this.getData}>Next</button>
-                        </ul>
-                    </div>
+                            :
+                            (
+                                <h2>Carregando...</h2>
+                            )
+                    }
                 </div>
             </FadeIn>
         );
